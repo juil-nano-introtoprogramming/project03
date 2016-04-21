@@ -18,13 +18,25 @@ not contain numbers.
 In special cases, this reveals a secret message in the reordered images."""
 
 import os
+from os.path import isfile, join
 
 def rename_files():
     """Rename each file in a given folder."""
+    path = os.getcwd()
+    print path
+    folder = 'prank'
+    remove = '0123456789'
     #1: get file names from folder
-    file_list = os.listdir(r'/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
+    #http://stackoverflow.com/questions/3207219/how-to-list-all-files-of-a-directory-in-python
+    # os.chdir(join(path, folder))
+    os.chdir('/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
+    file_list = os.listdir('.')
     print file_list
 
     #2: for each file, rename file
+    for file_name in file_list:
+        os.rename(file_name, file_name.translate(None, remove))
+
+    print 'Done!'
 
 rename_files()
