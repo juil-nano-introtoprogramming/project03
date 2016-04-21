@@ -16,3 +16,15 @@ This script takes a given directory and renames every file within to
 not contain numbers.
 
 In special cases, this reveals a secret message in the reordered images."""
+
+import os
+
+def rename_files():
+    """Rename each file in a given folder."""
+    #1: get file names from folder
+    file_list = os.listdir(r'/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
+    print file_list
+
+    #2: for each file, rename file
+
+rename_files()
