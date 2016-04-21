@@ -10,7 +10,7 @@
 ### Concepts Utilized
 - Import classes
 - Date/Time
-- Modify files
+- Access & modify files
 
 ### Extra
 -

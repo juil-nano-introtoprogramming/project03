@@ -28,15 +28,19 @@ def rename_files():
     remove = '0123456789'
     #1: get file names from folder
     #http://stackoverflow.com/questions/3207219/how-to-list-all-files-of-a-directory-in-python
-    # os.chdir(join(path, folder))
-    os.chdir('/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
+    os.chdir(join(path, folder)) 
+    #for when os.getcwd() doesn't work properly
+    # os.chdir('/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
+
     file_list = os.listdir('.')
-    print file_list
 
     #2: for each file, rename file
     for file_name in file_list:
-        os.rename(file_name, file_name.translate(None, remove))
+        new = file_name.translate(None, remove)
+        os.rename(file_name, new)
+        print file_name + ' >> ' + new
 
     print 'Done!'
 
-rename_files()
+if __name__ == '__main__':
+    rename_files()
