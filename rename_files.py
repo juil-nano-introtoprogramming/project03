@@ -20,9 +20,10 @@ In special cases, this reveals a secret message in the reordered images."""
 import os
 from os.path import isfile, join
 
-def scramble():
-    message = raw_input("What is your message: ")
-    print "Coming soon!"
+def scramble(message):
+    """Scramble a given message by adding numbers to the file name."""
+    for letter in message:
+        print letter
 
 
 def unscramble(folder):
@@ -49,7 +50,7 @@ def run():
     task = raw_input("Scramble or unscramble? (s/u): ")
     assert task in ['s', 'u', 'scramble', 'unscramble']
     if task.lower() in ['s', 'scramble']:
-        scramble()
+        scramble(raw_input("What is your message: "))
     else:
         print "You are currently in " + os.getcwd()
         unscramble(raw_input("Enter the folder to unscramble: "))
