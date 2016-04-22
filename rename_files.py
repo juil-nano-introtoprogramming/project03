@@ -20,15 +20,18 @@ In special cases, this reveals a secret message in the reordered images."""
 import os
 from os.path import isfile, join
 
-def rename_files():
-    """Rename each file in a given folder."""
-    path = os.getcwd()
-    print path
-    folder = 'prank'
+def scramble():
+    message = raw_input("What is your message: ")
+    print "Coming soon!"
+
+
+def unscramble(folder):
+    """Unscramble files in folder by removing numbers from the file names."""
     remove = '0123456789'
+    path = os.getcwd()
     #1: get file names from folder
     #http://stackoverflow.com/questions/3207219/how-to-list-all-files-of-a-directory-in-python
-    os.chdir(join(path, folder)) 
+    os.chdir(join(path, folder))
     #for when os.getcwd() doesn't work properly
     # os.chdir('/Users/juil/Documents/school/udacity/nano-introtoprogramming/project03/prank/')
 
@@ -42,5 +45,14 @@ def rename_files():
 
     print 'Done!'
 
+def run():
+    task = raw_input("Scramble or unscramble? (s/u): ")
+    assert task in ['s', 'u', 'scramble', 'unscramble']
+    if task.lower() in ['s', 'scramble']:
+        scramble()
+    else:
+        print "You are currently in " + os.getcwd()
+        unscramble(raw_input("Enter the folder to unscramble: "))
+
 if __name__ == '__main__':
-    rename_files()
+    run()
