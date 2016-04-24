@@ -71,8 +71,8 @@ def draw_tri_fractal(turtle, length, level):
     """Draws a triangle fractal with given length and levels.
 
     Args:
+        length (integer): A number that is a power of 2 for accuracy
         level (integer): Number >= 1."""
-    # assert level == 1
     if level == 1:
         draw_triangle(turtle, length, True)
         turtle.left(60)
@@ -84,13 +84,14 @@ def draw_tri_fractal(turtle, length, level):
         turtle.left(60)
         draw_triangle(turtle, length, True)
     else:
+        move = length/2**(level-1)
         draw_tri_fractal(turtle, length/2, level-1)
-        turtle.forward(length/2)
+        turtle.forward(move)
         turtle.left(120)
         turtle.forward(length)
         turtle.right(120)
         draw_tri_fractal(turtle, length/2, level-1)
-        turtle.forward(length/2)
+        turtle.forward(move)
         turtle.right(120)
         turtle.forward(length)
         turtle.left(120)
@@ -103,7 +104,7 @@ if __name__ == '__main__':
     brad = turtle.Turtle()
     brad.shape('turtle')
     brad.color('#164','#AEB')
-    brad.speed(8)
+    brad.speed(0)
 
     # draw_square(100, 0)
     # draw_circle(100)
@@ -111,6 +112,6 @@ if __name__ == '__main__':
     # draw_circle_withsquares(brad, 100, 30)
     # draw_rhombus(brad, 100, .5)
     # draw_flower(brad, 100, 40)
-    draw_tri_fractal(brad, 100, 3)
+    draw_tri_fractal(brad, 2**6, 4)
 
     window.exitonclick()
