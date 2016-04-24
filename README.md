@@ -10,6 +10,8 @@
 3. Computer Graphics - `mindstorms.py`
   - Uses turtle module to draw
   - **Bonus:** `draw_tri_fractal(turtle, length, level)` can draw a fractal with arbitrary levels.
+    - 4 level triangle fractal
+    ![4 level fractal](images/4level-fractal.gif)
 
 ### Concepts Utilized
 - Import classes
