@@ -83,19 +83,26 @@ def draw_tri_fractal(turtle, length, level):
         turtle.forward(length)
         turtle.left(60)
         draw_triangle(turtle, length, True)
+        # Move turtle to starting point
+        turtle.right(180)
+        turtle.forward(length)
+        turtle.right(180)
     else:
-        move = length/2**(level-1)
         draw_tri_fractal(turtle, length/2, level-1)
-        turtle.forward(move)
+        turtle.forward(length)
         turtle.left(120)
         turtle.forward(length)
         turtle.right(120)
         draw_tri_fractal(turtle, length/2, level-1)
-        turtle.forward(move)
+        turtle.forward(length)
         turtle.right(120)
         turtle.forward(length)
         turtle.left(120)
         draw_tri_fractal(turtle, length/2, level-1)
+        # Move turtle to starting point
+        turtle.right(180)
+        turtle.forward(length)
+        turtle.right(180)
 
 
 if __name__ == '__main__':
@@ -112,6 +119,6 @@ if __name__ == '__main__':
     # draw_circle_withsquares(brad, 100, 30)
     # draw_rhombus(brad, 100, .5)
     # draw_flower(brad, 100, 40)
-    draw_tri_fractal(brad, 2**6, 4)
+    draw_tri_fractal(brad, 2**6, 5)
 
     window.exitonclick()

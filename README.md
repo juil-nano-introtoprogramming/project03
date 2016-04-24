@@ -9,6 +9,7 @@
   - **Bonus:** Add function to create a scrambled message.
 3. Computer Graphics - `mindstorms.py`
   - Uses turtle module to draw
+  - **Bonus:** `draw_tri_fractal(turtle, length, level)` can draw a fractal with arbitrary levels.
 
 ### Concepts Utilized
 - Import classes
