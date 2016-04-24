@@ -110,7 +110,7 @@ if __name__ == '__main__':
 
     brad = turtle.Turtle()
     brad.shape('turtle')
-    brad.color('#164','#AEB')
+    brad.color('#AEB','#164')
     brad.speed(0)
 
     # draw_square(100, 0)
@@ -119,6 +119,6 @@ if __name__ == '__main__':
     # draw_circle_withsquares(brad, 100, 30)
     # draw_rhombus(brad, 100, .5)
     # draw_flower(brad, 100, 40)
-    draw_tri_fractal(brad, 2**6, 5)
+    draw_tri_fractal(brad, 2**6, 4)
 
     window.exitonclick()
