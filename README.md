@@ -7,11 +7,14 @@
 2. Rename Files - `rename_files.py`
   - Renames the files in a folder to remove all numbers from file names to reveal a hidden message.
   - **Bonus:** Add function to create a scrambled message.
+3. Computer Graphics - `mindstorms.py`
+  - Uses turtle module to draw
 
 ### Concepts Utilized
 - Import classes
 - Date/Time
 - Access & modify files & directories
+- Computer graphics
 
 ### Extra
 -
