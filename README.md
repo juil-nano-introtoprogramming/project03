@@ -12,7 +12,7 @@
   - **Bonus:** `draw_tri_fractal(turtle, length, level)` can draw a fractal with arbitrary levels.
     - 4 level triangle fractal
     ![4 level fractal](images/4level-fractal.gif)
-4. Send Text - `sent_text.py`
+4. Send Text - `send_text.py`
   - Send a text using twilio.
 
 ### Concepts Utilized
@@ -20,6 +20,7 @@
 - Date/Time
 - Access & modify files & directories
 - Computer graphics
+- External libraries
 
 ### Extra
 -
