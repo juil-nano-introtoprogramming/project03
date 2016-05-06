@@ -13,7 +13,9 @@
     - 4 level triangle fractal
     ![4 level fractal](images/4level-fractal.gif)
 4. Send Text - `send_text.py`
-  - Send a text using twilio.
+  - Send a text using Twilio.
+  - **Warning:** Make sure auth token and #s are not included when commits are made.
+5. Profanity Editor -
 
 ### Concepts Utilized
 - Import classes
