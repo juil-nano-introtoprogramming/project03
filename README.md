@@ -15,7 +15,11 @@
 4. Send Text - `send_text.py`
   - Send a text using Twilio.
   - **Warning:** Make sure auth token and #s are not included when commits are made.
-5. Profanity Editor -
+5. Profanity Editor - `check_profanity.py`
+  - Throw a message if there is a profanity in given text.
+  - Use connections
+  - *alt*: `pirate_speech.py`
+
 
 ### Concepts Utilized
 - Import classes
@@ -23,6 +27,7 @@
 - Access & modify files & directories
 - Computer graphics
 - External libraries
+- urllib class
 
 ### Extra
 -
