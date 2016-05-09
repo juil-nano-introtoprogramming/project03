@@ -22,6 +22,7 @@
 6. Movie Trailers - `movies/`
   - Class for movies with movie posters and trailers.
   - Created first class
+  - Create webpage with Python
   - Class: `media.py`
 
 ### Concepts Utilized
@@ -33,6 +34,6 @@
 - Create classes
 
 ### Extra
-- 
+-
 
 By [**Juil**](http://juil.me)
