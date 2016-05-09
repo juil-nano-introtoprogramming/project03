@@ -19,7 +19,10 @@
   - Throw a message if there is a profanity in given text.
   - Use connections
   - *alt*: `pirate_speech.py`
-
+6. Movie Trailers - `movies/`
+  - Class for movies with movie posters and trailers.
+  - Created first class
+  - Class: `media.py`
 
 ### Concepts Utilized
 - Import classes
@@ -27,9 +30,9 @@
 - Access & modify files & directories
 - Computer graphics
 - External libraries
-- urllib class
+- Create classes
 
 ### Extra
--
+- 
 
 By [**Juil**](http://juil.me)
