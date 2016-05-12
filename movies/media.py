@@ -1,8 +1,18 @@
 #!python
 import webbrowser
 
-class Movie():
+class Video():
+    """The Video() class provides a way to store video related
+    information."""
+    def __init__(self, title, duration):
+        self.title = title
+        self.duration = duration
+
+class Movie(Video):
+    """The Movie() class provides a way to store movie related information."""
+
     VALID_RATINGS = ['G', 'PG', 'PG-13', 'R']
+
     def __init__(self, title, plot, poster, trailer):
         self.title = title
         self.storyline = plot

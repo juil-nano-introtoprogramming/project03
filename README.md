@@ -34,6 +34,6 @@
 - Create classes
 
 ### Extra
--
+- **.gitignore** `*.pyc` files
 
 By [**Juil**](http://juil.me)
