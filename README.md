@@ -19,7 +19,8 @@
   - Throw a message if there is a profanity in given text.
   - Use connections
   - *alt*: `pirate_speech.py`
-6. Movie Trailers - `movies/`
+6. **Final Project**: Movie Trailers - `movies/`
+  - [Live Example](https://juil-nano-introtoprogramming.github.io/project03/)
   - Class for movies with movie posters and trailers.
   - Created first class
   - Create webpage with Python
