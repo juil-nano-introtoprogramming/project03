@@ -36,5 +36,6 @@
 
 ### Extra
 - **.gitignore** `*.pyc` files
+- Use weakrefs to collect all instances of a class
 
 By [**Juil**](http://juil.me)
