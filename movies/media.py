@@ -1,13 +1,29 @@
 #!python
+from collections import defaultdict
+import weakref
 import webbrowser
 
-class Video(object):
+class KeepRefs(object):
+    __refs__ = defaultdict(list)
+    def __init__(self):
+        self.__refs__[self.__class__].append(weakref.ref(self))
+
+    @classmethod
+    def get_instances(cls):
+        for inst_ref in cls.__refs__[cls]:
+            inst = inst_ref()
+            if inst is not None:
+                yield inst
+
+
+class Video(KeepRefs):
     """The Video() class provides a way to store video related
     information."""
-    def __init__(self, title, duration, medium, genre):
+    def __init__(self, title, plot, duration, genre):
+        super(Video, self).__init__()
         self.title = title
+        self.plot = plot
         self.duration = duration
-        self.medium = medium
         self.genre = genre
 
 class Movie(Video):
@@ -15,12 +31,8 @@ class Movie(Video):
 
     VALID_RATINGS = ['G', 'PG', 'PG-13', 'R']
 
-    def __init__(self, title, duration, medium, genre, plot, poster, trailer, info):
-        self.title = title
-        self.duration = duration
-        self.medium = medium
-        self.genre = genre
-        self.storyline = plot
+    def __init__(self, title, plot, duration, genre, poster, trailer, info):
+        super(Movie, self).__init__(title, plot, duration, genre)
         self.poster_image_url = poster
         self.trailer_youtube_url = trailer
         self.info_url = info
@@ -32,16 +44,9 @@ class Movie(Video):
 class TVShow(Movie):
     """ The TVShow() class stores television show related information."""
 
-    def __init__(self, title, duration, medium, genre, plot, poster, trailer,
+    def __init__(self, title, plot, duration, genre, poster, trailer,
                 info, seasons, episodes, ongoing):
-        self.title = title
-        self.duration = duration
-        self.medium = medium
-        self.genre = genre
-        self.storyline = plot
-        self.poster_image_url = poster
-        self.trailer_youtube_url = trailer
-        self.info_url = info
-        self.num_seasons = num_seasons
-        self.num_episodes = num_episodes
-        self.is_ongoing = is_ongoing
+        super(TVShow, self).__init__(title, plot, duration, genre, poster, trailer, info)
+        self.num_seasons = seasons
+        self.num_episodes = episodes
+        self.is_ongoing = ongoing
