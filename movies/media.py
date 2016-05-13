@@ -10,15 +10,16 @@ class KeepRefs(object):
 
     @classmethod
     def get_instances(cls):
+        """Collects all instances of cls.
+
+        Code taken from http://stackoverflow.com/a/12179752/745776"""
         for inst_ref in cls.__refs__[cls]:
             inst = inst_ref()
             if inst is not None:
                 yield inst
 
-
 class Video(KeepRefs):
-    """The Video() class provides a way to store video related
-    information."""
+    """The Video() class provides a way to store video related information."""
     def __init__(self, title, plot, duration, genre):
         super(Video, self).__init__()
         self.title = title
@@ -38,6 +39,7 @@ class Movie(Video):
         self.info_url = info
 
     def show_trailer(self):
+        """Opens the movie's trailer in a web browser."""
         print self.title + " Trailer"
         webbrowser.open(self.trailer_youtube_url)
 
