@@ -4,10 +4,9 @@ import webbrowser
 class Video(object):
     """The Video() class provides a way to store video related
     information."""
-    def __init__(self, title, duration, medium, genre):
+    def __init__(self, title, duration, genre):
         self.title = title
         self.duration = duration
-        self.medium = medium
         self.genre = genre
 
 class Movie(Video):
@@ -15,12 +14,11 @@ class Movie(Video):
 
     VALID_RATINGS = ['G', 'PG', 'PG-13', 'R']
 
-    def __init__(self, title, duration, medium, genre, plot, poster, trailer, info):
+    def __init__(self, title, plot, duration, genre, poster, trailer, info):
         self.title = title
-        self.duration = duration
-        self.medium = medium
-        self.genre = genre
         self.storyline = plot
+        self.duration = duration
+        self.genre = genre
         self.poster_image_url = poster
         self.trailer_youtube_url = trailer
         self.info_url = info
@@ -32,13 +30,12 @@ class Movie(Video):
 class TVShow(Movie):
     """ The TVShow() class stores television show related information."""
 
-    def __init__(self, title, duration, medium, genre, plot, poster, trailer,
+    def __init__(self, title, plot, duration, genre, poster, trailer,
                 info, seasons, episodes, ongoing):
         self.title = title
-        self.duration = duration
-        self.medium = medium
-        self.genre = genre
         self.storyline = plot
+        self.duration = duration
+        self.genre = genre
         self.poster_image_url = poster
         self.trailer_youtube_url = trailer
         self.info_url = info
