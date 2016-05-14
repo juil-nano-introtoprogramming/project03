@@ -19,7 +19,10 @@ class KeepRefs(object):
                 yield inst
 
 class Video(KeepRefs):
-    """The Video() class provides a way to store video related information."""
+    """The Video() class provides a way to store video related information.
+
+    Args:
+        duration (int): Length of video in minutes."""
     def __init__(self, title, plot, duration, genre):
         super(Video, self).__init__()
         self.title = title
