@@ -3,6 +3,8 @@
 import media
 import fresh_tomatoes
 
+from operator import add
+
 toy_story = media.Movie("Toy Story",
                         "In a world where toys pretend to be lifeless in the presence of humans, Woody, a pullstring cowboy doll, is the leader of a group of toys that are owned by a boy named Andy Davis.",
                         '1:21',
@@ -114,7 +116,7 @@ nichijou = media.TVShow("Nichijou",
                         1, 26, False)
 
 if __name__ == '__main__':
-    movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris, hunger_games, spirited_away]
-    anime = [spirited_away, nichijou, ghost_in_the_shell_sac, ergo_proxy, full_metal_panic_fumoffu, mononoke_hime, cowboy_bebop]
+    classes = [media.Movie, media.TVShow]
+    all_video = reduce(add, map(list, map(lambda cls: cls.get_instances(), classes)))
 
-    fresh_tomatoes.open_movies_page(media.Movie.get_instances())
+    fresh_tomatoes.open_movies_page(all_video)
