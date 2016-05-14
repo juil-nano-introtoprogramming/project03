@@ -30,9 +30,18 @@ class Video(KeepRefs):
         self.duration = duration
         self.genre = genre
 
+    def print_genre(self):
+        """Return list of genres as a string."""
+        genres = self.genre[0]
+        if len(self.genre) > 1:
+            for g in self.genre[1:]:
+                genres += ', ' + g
+        return genres
+
     @classmethod
     def in_genre(cls, genre):
         """Returns all videos with specified genre."""
+        #TODO: Fix function
         for inst_ref in cls.__refs__[cls]:
             inst = inst_ref()
             if genre in inst.genre:
