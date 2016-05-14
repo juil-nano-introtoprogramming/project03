@@ -27,6 +27,14 @@ class Video(KeepRefs):
         self.duration = duration
         self.genre = genre
 
+    @classmethod
+    def in_genre(cls, genre):
+        """Collects all videos with specified genre."""
+        for inst_ref in cls.__refs__[cls]:
+            inst = inst_ref()
+            if genre in inst.genre:
+                yield inst
+
 class Movie(Video):
     """The Movie() class provides a way to store movie related information."""
 
