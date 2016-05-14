@@ -38,6 +38,8 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+            overflow:hidden;
+            position: relative;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -57,16 +59,25 @@ main_page_head = '''
             background-color: white;
         }
         .overlay {
-            background-color: rgba(0,0,0,0.75);
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            background: rgba(0,0,0,0.75);
             opacity: 0;
             -webkit-transition: opacity .25s ease;
             -moz-transition: opacity .25s ease;
+
+            color: #FFF;
+            text-align: left;
+            padding: 10px;
+            font-size: 1.5em;
         }
         .movie-tile:hover .overlay{
             opacity: 1;
         }
         .plot {
-            font.weight: 200;
+            font.weight: 100;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -139,7 +150,7 @@ movie_tile_content = '''
     <h2>{movie_title}</h2>
 
     <div class="overlay">
-        <p><span class='plot'>{movie_plot}</span><br>
+        <p><span class='plot'>{movie_plot}</span><br></p>
     </div>
 </div>
 '''
