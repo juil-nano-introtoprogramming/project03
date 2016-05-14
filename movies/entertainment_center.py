@@ -116,7 +116,7 @@ nichijou = media.TVShow("Nichijou",
                         1, 26, False)
 
 if __name__ == '__main__':
-    classes = [media.Movie, media.TVShow]
-    all_video = reduce(add, map(list, map(lambda cls: cls.get_instances(), classes)))
+    mediums = [media.Movie, media.TVShow]
+    all_video = reduce(add, map(list, (medium.get_instances() for medium in mediums)))
 
     fresh_tomatoes.open_movies_page(all_video)
