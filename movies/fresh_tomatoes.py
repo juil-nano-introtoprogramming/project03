@@ -77,7 +77,7 @@ main_page_head = '''
             opacity: 1;
         }
         .plot {
-            font.weight: 100;
+            font-weight: 100;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -150,9 +150,9 @@ movie_tile_content = '''
     <h2>{movie_title}</h2>
 
     <div class="overlay">
-        <p class='plot'>{movie_plot}</p>
-        <p>Dur: {movie_duration}</p>
-        <p><b>{movie_genre}</b></p>
+        <p style="font-weight:100;">{movie_plot}</p>
+        <p style="font-size:0.8em;">Duration: {movie_duration} Minutes</p>
+        <p>{movie_genre}</p>
     </div>
 </div>
 '''
