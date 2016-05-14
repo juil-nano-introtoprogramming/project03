@@ -10,7 +10,7 @@ class KeepRefs(object):
 
     @classmethod
     def get_instances(cls):
-        """Collects all instances of cls.
+        """Returns all instances of cls.
 
         Code taken from http://stackoverflow.com/a/12179752/745776"""
         for inst_ref in cls.__refs__[cls]:
@@ -29,7 +29,7 @@ class Video(KeepRefs):
 
     @classmethod
     def in_genre(cls, genre):
-        """Collects all videos with specified genre."""
+        """Returns all videos with specified genre."""
         for inst_ref in cls.__refs__[cls]:
             inst = inst_ref()
             if genre in inst.genre:

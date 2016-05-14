@@ -38,6 +38,8 @@ main_page_head = '''
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+            overflow:hidden;
+            position: relative;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -55,6 +57,27 @@ main_page_head = '''
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            background: rgba(0,0,0,0.75);
+            opacity: 0;
+            -webkit-transition: opacity .25s ease;
+            -moz-transition: opacity .25s ease;
+
+            color: #FFF;
+            text-align: left;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        .movie-tile:hover .overlay{
+            opacity: 1;
+        }
+        .plot {
+            font.weight: 100;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -125,6 +148,10 @@ movie_tile_content = '''
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="{trailer_youtube_id}" data-toggle="modal" data-target="#trailer">
     <img src="{poster_image_url}" width="220" height="342">
     <h2>{movie_title}</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>{movie_plot}</span><br></p>
+    </div>
 </div>
 '''
 
@@ -144,6 +171,7 @@ def create_movie_tiles_content(movies):
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
+            movie_plot=movie.plot,
             poster_image_url=movie.poster_image_url,
             trailer_youtube_id=trailer_youtube_id
         )
