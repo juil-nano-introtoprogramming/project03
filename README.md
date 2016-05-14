@@ -39,5 +39,6 @@
 - **.gitignore** `*.pyc` files
 - Use weakrefs to collect all instances of a class
 - Use lambda and generator expressions
+- Regular expressions
 
 By [**Juil**](http://juil.me)
