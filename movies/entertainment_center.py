@@ -116,6 +116,7 @@ nichijou = media.TVShow("Nichijou",
                         1, 26, False)
 
 if __name__ == '__main__':
+    """Generates an HTML page with all video instances and opens it in a browser."""
     mediums = [media.Movie, media.TVShow]
     all_video = reduce(add, map(list, (medium.get_instances() for medium in mediums)))
 
