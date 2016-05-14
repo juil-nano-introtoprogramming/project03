@@ -62,7 +62,7 @@ main_page_head = '''
             position: absolute;
             top: 0;
             left: 0;
-            
+
             background: rgba(0,0,0,0.75);
             opacity: 0;
             -webkit-transition: opacity .25s ease;
@@ -150,7 +150,9 @@ movie_tile_content = '''
     <h2>{movie_title}</h2>
 
     <div class="overlay">
-        <p><span class='plot'>{movie_plot}</span><br></p>
+        <p class='plot'>{movie_plot}</p>
+        <p>Dur: {movie_duration}</p>
+        <p><b>{movie_genre}</b></p>
     </div>
 </div>
 '''
@@ -165,15 +167,16 @@ def create_movie_tiles_content(movies):
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
-                              else None)
+        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match else None)
 
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
             movie_plot=movie.plot,
+            movie_duration=movie.duration,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_genre=movie.print_genre()
         )
     return content
 
