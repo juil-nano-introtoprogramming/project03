@@ -32,6 +32,8 @@
         .movie-tile {
             margin-bottom: 20px;
             padding-top: 20px;
+            overflow:hidden;
+            position: relative;
         }
         .movie-tile:hover {
             background-color: #EEE;
@@ -49,6 +51,27 @@
             left: 0;
             top: 0;
             background-color: white;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            
+            background: rgba(0,0,0,0.75);
+            opacity: 0;
+            -webkit-transition: opacity .25s ease;
+            -moz-transition: opacity .25s ease;
+
+            color: #FFF;
+            text-align: left;
+            padding: 10px;
+            font-size: 1.5em;
+        }
+        .movie-tile:hover .overlay{
+            opacity: 1;
+        }
+        .plot {
+            font.weight: 100;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -107,66 +130,118 @@
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="KYz2wyBy3kc" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/1/13/Toy_Story.jpg" width="220" height="342">
     <h2>Toy Story</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>In a world where toys pretend to be lifeless in the presence of humans, Woody, a pullstring cowboy doll, is the leader of a group of toys that are owned by a boy named Andy Davis.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="Fq00mCqBMY8" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg" width="220" height="342">
     <h2>Avatar</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>A marine on an alien planet.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="ByXuk9QqQkk" data-toggle="modal" data-target="#trailer">
     <img src="http://ia.media-imdb.com/images/M/MV5BMjYxMDcyMzIzNl5BMl5BanBnXkFtZTYwNDg2MDU3._V1_UY268_CR4,0,182,268_AL_.jpg" width="220" height="342">
     <h2>Spirited Away</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="3PsUJFEBC74" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/1/11/School_of_Rock_Poster.jpg" width="220" height="342">
     <h2>School of Rock</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>Rock musician becomes high school music teacher.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="FAfR8omt-CY" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Midnight_in_Paris_Poster.jpg" width="220" height="342">
     <h2>Midnight in Paris</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>A screenwriter confronts his relationship by travelling back in time at midnight.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="c3sBBRxDAqk" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/5/50/RatatouillePoster.jpg" width="220" height="342">
     <h2>Ratatouille</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>A rat who can cook makes an alliance with a young kitchen worker.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="4S9a5V9ODuY" data-toggle="modal" data-target="#trailer">
     <img src="https://upload.wikimedia.org/wikipedia/en/4/42/HungerGamesPoster.jpg" width="220" height="342">
     <h2>Hunger Games</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>A girl must survive the oppressive regime's death games.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="4OiMOHRDs14" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/7/75919.jpg" width="220" height="342">
     <h2>Mononoke Hime</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>When an Emishi village is attacked by a fierce demon boar, the young prince Ashitaka puts his life at stake to defend his tribe. With its dying breath, the beast curses the prince's arm, granting him demonic powers while gradually siphoning his life away. Instructed by the village elders to travel westward for a cure, Ashitaka arrives at Tatara, the Iron Town, where he finds himself embroiled in a fierce conflict: Lady Eboshi of Tatara, promoting constant deforestation, stands against Princess San and the sacred spirits of the forest, who are furious at the destruction brought by the humans. As the opposing forces of nature and mankind begin to clash in a desperate struggle for survival, Ashitaka attempts to seek harmony between the two, all the while battling the latent demon inside of him. Princess Mononoke is a tale depicting the connection of technology and nature, while showing the path to harmony that could be achieved by mutual acceptance. [Written by MAL Rewrite]</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="qig4KOK2R2g" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/4/19644.jpg" width="220" height="342">
     <h2>Cowboy Bebop</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>A ragtag team of bounty hunters travelling through space.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="UaZEknOT0HA" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/4/75260.jpg" width="220" height="342">
     <h2>Full Metal Panic? Fumoffu</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>Its back-to-school mayhem with Kaname Chidori and her war-freak classmate Sousuke Sagara as they encounter more misadventures in and out of Jindai High School.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="WjTPHVz6OOg" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/11/6259.jpg" width="220" height="342">
     <h2>Ergo Proxy</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>The world is bigger than you think... After the explosion of the methane hydrate layer, the remaining members of mankind are forced to live in isolated domed cities scattered across the arid and inhospitable planet. They live in a controlled society and are assisted in daily life by autonomous robots called AutoReivs. In one of these cities, Romdo, Inspector Re-l Mayer, granddaughter of the regent, leads an investigation concerning AutoReivs that have gone mad after being infected by the Cogito virus. In the process, she comes in contact with a monster called Proxy. Elsewhere in the city, immigrant Vincent Law is on the run after being framed for involvement in several Cogito cases. Together, along with the adorable child-AutoReiv Pino, they set out on a journey to the dome city Mosk in order to unravel the mystery of the Proxies.</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="SY6PNTzQb1A" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/11/50857.jpg" width="220" height="342">
     <h2>Ghost in the Shell: Stand Alone Complex</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>In the not so distant future, mankind has advanced to a state where complete body transplants from flesh to machine is possible. This allows for great increases in both physical and cybernetic prowess and blurring the lines between the two worlds. However, criminals can also make full use of such technology, leading to new and sometimes, very dangerous crimes. In response to such innovative new methods, the Japanese Government has established Section 9, an independently operating police unit which deals with such highly sensitive crimes. Led by Daisuke Aramaki and Motoko Kusanagi, Section 9 deals with such crimes over the entire social spectrum, usually with success. However, when faced with a new A level hacker nicknamed 'The Laughing Man,' the team is thrown into a dangerous cat and mouse game, following the hacker's trail as it leaves its mark on Japan. [Written by MAL Rewrite]</span><br></p>
+    </div>
 </div>
 
 <div class="col-md-6 col-lg-4 movie-tile text-center" data-trailer-youtube-id="CD6VdVDVDXI" data-toggle="modal" data-target="#trailer">
     <img src="http://cdn.myanimelist.net/images/anime/3/75617.jpg" width="220" height="342">
     <h2>Nichijou</h2>
+
+    <div class="overlay">
+        <p><span class='plot'>Nichijou primarily focuses on the daily antics of a trio of childhood friends—high school girls Mio Naganohara, Yuuko Aioi and Mai Minakami—whose stories soon intertwine with the young genius Hakase Shinonome, her robot caretaker Nano, and their talking cat Sakamoto.</span><br></p>
+    </div>
 </div>
 
     </div>
