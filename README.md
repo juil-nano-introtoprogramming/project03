@@ -25,6 +25,7 @@
   - Created first class
   - Create webpage with Python
   - Class: `media.py`
+  - Execute `entertainment_center.py` to generate HTML page.
 
 ### Concepts Utilized
 - Import classes

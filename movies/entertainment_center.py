@@ -3,6 +3,8 @@
 import media
 import fresh_tomatoes
 
+from operator import add
+
 toy_story = media.Movie("Toy Story",
                         "In a world where toys pretend to be lifeless in the presence of humans, Woody, a pullstring cowboy doll, is the leader of a group of toys that are owned by a boy named Andy Davis.",
                         '1:21',
@@ -16,7 +18,7 @@ avatar = media.Movie("Avatar",
                     '2:42',
                     ['Action', 'Adventure', 'Fantasy'],
                     "http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_UX182_CR0,0,182,268_AL_.jpg",
-                    "https://www.youtube.com/watch?v=Fq00mCqBMY8cRdxXPV9GNQ",
+                    "https://www.youtube.com/watch?v=Fq00mCqBMY8",
                     "http://www.imdb.com/title/tt0499549/")
 
 spirited_away = media.Movie("Spirited Away",
@@ -114,7 +116,7 @@ nichijou = media.TVShow("Nichijou",
                         1, 26, False)
 
 if __name__ == '__main__':
-    movies = [toy_story, avatar, school_of_rock, ratatouille, midnight_in_paris, hunger_games, spirited_away]
-    anime = [spirited_away, nichijou, ghost_in_the_shell_sac, ergo_proxy, full_metal_panic_fumoffu, mononoke_hime, cowboy_bebop]
+    classes = [media.Movie, media.TVShow]
+    all_video = reduce(add, map(list, map(lambda cls: cls.get_instances(), classes)))
 
-    fresh_tomatoes.open_movies_page(anime)
+    fresh_tomatoes.open_movies_page(all_video)
