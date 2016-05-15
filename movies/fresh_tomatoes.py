@@ -204,10 +204,11 @@ def create_movie_tiles_content(movies):
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
         trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match else None)
 
-        # Display number of episodes if TV Shows
+        # Display number of episodes if TV Shows and ongoing status
         duration = str(movie.duration) + ' minutes'
         if movie.__class__==media.TVShow:
             duration += " | Episodes: " + str(movie.num_episodes)
+            if movie.is_ongoing==True: duration += " | Ongoing"
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
