@@ -17,6 +17,17 @@ main_page_head = '''
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
+        nav {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-flow: wrap;
+        }
+        nav > a {
+            padding: 10px 10px;
+        }
         body {
             padding-top: 80px;
         }
@@ -63,21 +74,25 @@ main_page_head = '''
             top: 0;
             left: 0;
 
-            background: rgba(0,0,0,0.75);
+            background: rgba(0,0,0,0.8);
             opacity: 0;
             -webkit-transition: opacity .25s ease;
             -moz-transition: opacity .25s ease;
 
             color: #FFF;
             text-align: left;
-            padding: 10px;
-            font-size: 1.5em;
+            padding: 20px;
+            font-size: 1.2em;
         }
         .movie-tile:hover .overlay{
             opacity: 1;
+            width: 100%
         }
         .plot {
             font-weight: 100;
+        }
+        .duration {
+            font-size: 0.8em;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -152,8 +167,8 @@ movie_tile_content = '''
     <h2>{movie_title}</h2>
 
     <div class="overlay">
-        <p style="font-weight:100;">{movie_plot}</p>
-        <p style="font-size:0.8em;">Duration: {movie_duration} Minutes</p>
+        <p class="plot">{movie_plot}</p>
+        <p class="duration">Duration: {movie_duration} Minutes</p>
         <p>{movie_genre}</p>
     </div>
 </div>
