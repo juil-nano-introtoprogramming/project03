@@ -180,10 +180,9 @@ def create_movie_tiles_content(movies):
         )
     return content
 
-
-def open_movies_page(movies):
+def render_page(category, movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open(category.lower()+'.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
@@ -195,4 +194,9 @@ def open_movies_page(movies):
 
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
+    return url
+
+def open_movies_page(movies):
+    """Render and open HTML page displaying movies."""
+    url = render_page('index', movies)
     webbrowser.open('file://' + url, new=2)
