@@ -72,7 +72,7 @@ cowboy_bebop = media.TVShow("Cowboy Bebop",
                             1, 26, False)
 
 mononoke_hime = media.Movie("Mononoke Hime",
-                            "When an Emishi village is attacked by a fierce demon boar, the young prince Ashitaka puts his life at stake to defend his tribe. With its dying breath, the beast curses the prince's arm, granting him demonic powers while gradually siphoning his life away. Instructed by the village elders to travel westward for a cure, Ashitaka arrives at Tatara, the Iron Town, where he finds himself embroiled in a fierce conflict: Lady Eboshi of Tatara, promoting constant deforestation, stands against Princess San and the sacred spirits of the forest, who are furious at the destruction brought by the humans. As the opposing forces of nature and mankind begin to clash in a desperate struggle for survival, Ashitaka attempts to seek harmony between the two, all the while battling the latent demon inside of him. Princess Mononoke is a tale depicting the connection of technology and nature, while showing the path to harmony that could be achieved by mutual acceptance. [Written by MAL Rewrite]",
+                            "A warrior princess raised by wolves, a cursed wanderer, and industrious mayor fight for future of a sacred forest.",
                             130,
                             ['Anime', 'Animation', 'Action', 'Adventure', 'Fantasy'],
                             "http://cdn.myanimelist.net/images/anime/7/75919.jpg",
@@ -89,7 +89,7 @@ full_metal_panic_fumoffu = media.TVShow("Full Metal Panic? Fumoffu",
                                         1, 12, False)
 
 ergo_proxy = media.TVShow("Ergo Proxy",
-                        "The world is bigger than you think... After the explosion of the methane hydrate layer, the remaining members of mankind are forced to live in isolated domed cities scattered across the arid and inhospitable planet. They live in a controlled society and are assisted in daily life by autonomous robots called AutoReivs. In one of these cities, Romdo, Inspector Re-l Mayer, granddaughter of the regent, leads an investigation concerning AutoReivs that have gone mad after being infected by the Cogito virus. In the process, she comes in contact with a monster called Proxy. Elsewhere in the city, immigrant Vincent Law is on the run after being framed for involvement in several Cogito cases. Together, along with the adorable child-AutoReiv Pino, they set out on a journey to the dome city Mosk in order to unravel the mystery of the Proxies.",
+                        "An inspector and framed immigrant work to unravel the mystery of androids gone rogue in a dystopian future.",
                         25,
                         ['Animation', 'Anime', 'Mystery', 'Psychological', 'Sci-Fi'],
                         "http://cdn.myanimelist.net/images/anime/11/6259.jpg",
@@ -98,7 +98,7 @@ ergo_proxy = media.TVShow("Ergo Proxy",
                         1, 23, False)
 
 ghost_in_the_shell_sac = media.TVShow("Ghost in the Shell: Stand Alone Complex",
-                                    "In the not so distant future, mankind has advanced to a state where complete body transplants from flesh to machine is possible. This allows for great increases in both physical and cybernetic prowess and blurring the lines between the two worlds. However, criminals can also make full use of such technology, leading to new and sometimes, very dangerous crimes. In response to such innovative new methods, the Japanese Government has established Section 9, an independently operating police unit which deals with such highly sensitive crimes. Led by Daisuke Aramaki and Motoko Kusanagi, Section 9 deals with such crimes over the entire social spectrum, usually with success. However, when faced with a new A level hacker nicknamed 'The Laughing Man,' the team is thrown into a dangerous cat and mouse game, following the hacker's trail as it leaves its mark on Japan. [Written by MAL Rewrite]",
+                                    "Motoko Kusanagi and her team at Section 9 solve and deal with criminal activity in a future where law-breakers are making full use of the power available in a technologically advanced future.",
                                     25,
                                     ['Animation', 'Anime', 'Action', 'Mecha', 'Military', 'Police', 'Sci-Fi', 'Seinen'],
                                     "http://cdn.myanimelist.net/images/anime/11/50857.jpg",
