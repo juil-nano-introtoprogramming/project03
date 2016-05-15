@@ -61,6 +61,15 @@ hunger_games = media.Movie("Hunger Games",
                             "https://www.youtube.com/watch?v=4S9a5V9ODuY",
                             "http://www.imdb.com/title/tt1392170/")
 
+better_call_saul = media.TVShow("Better Call Saul",
+                                "A former scam artist tries to make it as a lawyer, all while dealing with his paranoid brother always putting him down, the local Mexican cartel, and his own inability to let go of his past.",
+                                46,
+                                ['Crime', 'Drama'],
+                                "http://ia.media-imdb.com/images/M/MV5BNjk5MjYwNjg4NV5BMl5BanBnXkFtZTgwNzAzMzc5NzE@._V1_UX182_CR0,0,182,268_AL_.jpg",
+                                "https://www.youtube.com/watch?v=9q4qzYrHVmI",
+                                "http://www.imdb.com/title/tt3032476/",
+                                2, 20, True)
+
 # Anime
 cowboy_bebop = media.TVShow("Cowboy Bebop",
                             "A ragtag team of bounty hunters travelling through space.",
