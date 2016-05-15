@@ -1,6 +1,7 @@
 import webbrowser
 import os
 import re
+import media
 
 
 # Styles and scripting for the page
@@ -17,6 +18,17 @@ main_page_head = '''
     <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
     <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
     <style type="text/css" media="screen">
+        nav {
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: flex;
+            flex-flow: wrap;
+        }
+        nav > a {
+            padding: 10px 10px;
+        }
         body {
             padding-top: 80px;
         }
@@ -62,22 +74,26 @@ main_page_head = '''
             position: absolute;
             top: 0;
             left: 0;
-            
-            background: rgba(0,0,0,0.75);
+
+            background: rgba(0,0,0,0.8);
             opacity: 0;
             -webkit-transition: opacity .25s ease;
             -moz-transition: opacity .25s ease;
 
             color: #FFF;
             text-align: left;
-            padding: 10px;
-            font-size: 1.5em;
+            padding: 20px;
+            font-size: 1.2em;
         }
         .movie-tile:hover .overlay{
             opacity: 1;
+            width: 100%
         }
         .plot {
-            font.weight: 100;
+            font-weight: 100;
+        }
+        .duration {
+            font-size: 0.8em;
         }
     </style>
     <script type="text/javascript" charset="utf-8">
@@ -129,9 +145,11 @@ main_page_content = '''
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
-          </div>
+          <nav class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Trailers</a>
+            <a class="category" href="index.html">All</a>
+            {category_buttons}
+          </nav>
         </div>
       </div>
     </div>
@@ -150,11 +168,30 @@ movie_tile_content = '''
     <h2>{movie_title}</h2>
 
     <div class="overlay">
-        <p><span class='plot'>{movie_plot}</span><br></p>
+        <p class="plot">{movie_plot}</p>
+        <p class="duration">Duration: {movie_duration}</p>
+        <p>{movie_genre}</p>
     </div>
 </div>
 '''
 
+# A single category navigation bar button HTML template
+category_button_content = '''
+    <a class="category" href="{category_url}">{movie_category}</a>
+'''
+
+# Dict of rendered category HTML pages
+navbar_categories = {'Movies': 'movie.html', 'TV Shows': 'tvshow.html'}
+
+def create_navbar_content(categories):
+    """Generate navigation bar buttons."""
+    content = ''
+    for category in categories:
+        content += category_button_content.format(
+            category_url=categories[category],
+            movie_category=category
+        )
+    return content
 
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
@@ -165,26 +202,31 @@ def create_movie_tiles_content(movies):
             r'(?<=v=)[^&#]+', movie.trailer_youtube_url)
         youtube_id_match = youtube_id_match or re.search(
             r'(?<=be/)[^&#]+', movie.trailer_youtube_url)
-        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match
-                              else None)
+        trailer_youtube_id = (youtube_id_match.group(0) if youtube_id_match else None)
 
+        # Display number of episodes if TV Shows
+        duration = str(movie.duration) + ' minutes'
+        if movie.__class__==media.TVShow:
+            duration += " | Episodes: " + str(movie.num_episodes)
         # Append the tile for the movie with its content filled in
         content += movie_tile_content.format(
             movie_title=movie.title,
             movie_plot=movie.plot,
+            movie_duration=duration,
             poster_image_url=movie.poster_image_url,
-            trailer_youtube_id=trailer_youtube_id
+            trailer_youtube_id=trailer_youtube_id,
+            movie_genre=movie.print_genre()
         )
     return content
 
-
-def open_movies_page(movies):
+def render_page(category, movies):
     # Create or overwrite the output file
-    output_file = open('fresh_tomatoes.html', 'w')
+    output_file = open(category.lower()+'.html', 'w')
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+        movie_tiles=create_movie_tiles_content(movies),
+        category_buttons=create_navbar_content(navbar_categories))
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
@@ -192,4 +234,9 @@ def open_movies_page(movies):
 
     # open the output file in the browser (in a new tab, if possible)
     url = os.path.abspath(output_file.name)
+    return url
+
+def open_movies_page(movies):
+    """Render and open HTML page displaying movies."""
+    url = render_page('index', movies)
     webbrowser.open('file://' + url, new=2)
