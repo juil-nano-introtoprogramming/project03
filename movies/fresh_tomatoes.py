@@ -129,9 +129,11 @@ main_page_content = '''
     <div class="container">
       <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">Fresh Tomatoes Movie Trailers</a>
-          </div>
+          <nav class="navbar-header">
+            <a class="navbar-brand" href="#">Fresh Tomatoes Trailers</a>
+            <a class="category" href="index.html">All</a>
+            {category_buttons}
+          </nav>
         </div>
       </div>
     </div>
@@ -157,6 +159,23 @@ movie_tile_content = '''
 </div>
 '''
 
+# A single category navigation bar button HTML template
+category_button_content = '''
+    <a class="category" href="{category_url}">{movie_category}</a>
+'''
+
+# Dict of rendered category HTML pages
+navbar_categories = {'Movies': 'movie.html', 'TV Shows': 'tvshow.html'}
+
+def create_navbar_content(categories):
+    """Generate navigation bar buttons."""
+    content = ''
+    for category in categories:
+        content += category_button_content.format(
+            category_url=categories[category],
+            movie_category=category
+        )
+    return content
 
 def create_movie_tiles_content(movies):
     # The HTML content for this section of the page
@@ -186,7 +205,8 @@ def render_page(category, movies):
 
     # Replace the movie tiles placeholder generated content
     rendered_content = main_page_content.format(
-        movie_tiles=create_movie_tiles_content(movies))
+        movie_tiles=create_movie_tiles_content(movies),
+        category_buttons=create_navbar_content(navbar_categories))
 
     # Output the file
     output_file.write(main_page_head + rendered_content)
